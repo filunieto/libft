@@ -50,3 +50,17 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+
+#nuevos archivos
+**/test 
+**/a.out 
+**/main.c 
+
+# files with personal comments fsev
+**/comments.txt
+
+# files from pipenv
+**/Pipfil*
+
+
