@@ -57,10 +57,10 @@ dkms.conf
 **/a.out 
 **/main.c 
 
-# files with personal comments fsev
-**/comments.txt
 
-# files from pipenv
+# files from pipenv(entorno virtual)
 **/Pipfil*
 
+# files from vs code
+/.vscode
 
