@@ -6,13 +6,13 @@
 /*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 11:59:04 by felipe            #+#    #+#             */
-/*   Updated: 2022/01/21 01:47:47 by fnieves          ###   ########.fr       */
+/*   Updated: 2022/01/25 13:59:36 by fnieves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(char c)
+int	  ft_isalnum(int c)
 {
 	return ((ft_isalpha(c)) || (ft_isdigit(c)));
 }

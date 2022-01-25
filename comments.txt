@@ -1,1 +1,13 @@
-Comenzamos con makefile
+Para norminetet -R CheckForbiddenSourceHeader
+Test para probar e instalados:
+https://github.com/filunieto/libft-war-machine
+El test : sale "make re " como fallo
+
+https://github.com/filunieto/libft-unit-test
+
+funciones:
+- por que se le pasa un argumento int a isascii?
+
+- cuál es el caso de uso del libft.a?
+
+- Cuando usamos el size_t?

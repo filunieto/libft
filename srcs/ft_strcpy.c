@@ -6,7 +6,7 @@
 /*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 14:55:36 by fnieves           #+#    #+#             */
-/*   Updated: 2022/01/24 13:34:38 by fnieves          ###   ########.fr       */
+/*   Updated: 2022/01/24 15:23:47 by fnieves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strcpy(char *dest, char *src)
 {
-    int	i;
+	int	i;
 
-    i = 0;
-    while (src[i])
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    dest[i] = '\0';
-    return (dest);
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
