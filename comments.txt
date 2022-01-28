@@ -1,4 +1,6 @@
 Para norminetet -R CheckForbiddenSourceHeader
+gcc -Wall -Wextra -Werror
+
 Test para probar e instalados:
 https://github.com/filunieto/libft-war-machine
 El test : sale "make re " como fallo
@@ -11,3 +13,34 @@ funciones:
 - cuál es el caso de uso del libft.a?
 
 - Cuando usamos el size_t?
+
+ft_strlcat: la funcion devuelve la longitud de ambas cadenas (dest +src) juntas. Explicacion.
+24: si los t caract. a concatenar == 0; devuelve la long de dest.
+26: si la long de source a concatenar es mayor que los "t size" a concatenar: devuelve destinacion + size (no lleva 0 al final en la long, por lo que no se tiene en cuenta)
+en 26 :el ejercicio original tiene esta sentencia. if (dest_len > size - 1) --Creo que lo correcto sería "dest_src"
+28: la long de source es menor que que lo n "size" a concatenar, se concatena todo y se devuelve la suma de souc y dest - el 0 al final
+
+atencion a esto con los punteros: (no es lo mismo incrementar s(puntero) que i(indice dentro , que comienza por un puntero de un string))
+	while (s[i])
+	{
+		printf("%c, %s\n", s[i], s);
+		i++;
+		//s++;
+	}
+duda: Para los parametros de return, no es lo mismo s =! (char *)s, para printf sí --hay que indicar siempre el tipo de dato?
+printf("comprobar print: %s y la solucion return %s\n", s, (char *)s); linea 34 y 39 abajo
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s && *s != (char) c)
+	{
+		s++;
+	}
+	if (*s == c)
+		return ((char *)s);
+	return NULL;
+}
+En ft_strdup,  return ((char *)dest) == return (dest); --> esta vez no tenemos el probelma de arriba (39)
+
+Duda: Como podemos pasar un parametro const char* / char * --> por ej a la funcion ft_strlen? sin tener que hacer una nueva funcion
+
+Duda en mis test: por qué no puedo cargar las funciones de libft?

@@ -53,7 +53,7 @@ dkms.conf
 
 
 #nuevos archivos
-**/test 
+
 **/a.out 
 **/main.c 
 

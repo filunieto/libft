@@ -15,6 +15,8 @@
 
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
+
 
 int	ft_isalnum(int c);
 int	ft_isalpha(int c);
@@ -24,15 +26,20 @@ int	ft_isprint(int c);
 int ft_tolower(int c);
 int ft_upper(int c);
 int	ft_strlen(char *str);
+int ft_atoi(const char *nptr);
+
 
 
 int	ft_strcmp(char *s1, char *s2);
 int	ft_strncmp(const char *s1, const char *s2, size_t size);
 
+char	*ft_strchr(const char *s, int c);
 char	*ft_strncat(char *dest, const char *src, size_t size);
 
 char	*ft_strcpy(char *dest, char *src);
 char	*ft_strncpy(char *dest, const char *src, size_t size);
+
+char *strdup(const char *s);
 
 
 #endif
