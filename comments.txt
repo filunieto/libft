@@ -44,3 +44,6 @@ En ft_strdup,  return ((char *)dest) == return (dest); --> esta vez no tenemos e
 Duda: Como podemos pasar un parametro const char* / char * --> por ej a la funcion ft_strlen? sin tener que hacer una nueva funcion
 
 Duda en mis test: por qué no puedo cargar las funciones de libft?
+
+memset: https://programmerclick.com/article/33201322748/   https://programmerclick.com/article/7222962360/
+

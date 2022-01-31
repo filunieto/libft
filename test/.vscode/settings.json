@@ -20,6 +20,7 @@
 	},
 	"peacock.color": "#61dafb",
 	"files.associations": {
-		"stdlib.h": "c"
+		"stdlib.h": "c",
+		"random": "c"
 	}
 }
