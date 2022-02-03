@@ -3,6 +3,7 @@
 #include <string.h>
 #include <memory.h>
 
+//Esta función hay que verificarla:
 
 void	*ft_memccpy2(void *dest, const void *src, int c, size_t n);
 void	*ft_memccpy3(void *dest, const void *src, int c, size_t n);
@@ -96,7 +97,7 @@ void	*ft_memccpy4(void *dest, const void *src, int c, size_t n) //esta ha sido m
 }
 
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n) //funciion de github
+void	*ft_memccpy6(void *dst, const void *src, int c, size_t n) //funciion de github
 {
 	size_t	i;
 
@@ -108,5 +109,27 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n) //funciion de gith
 			return (dst + i + 1);
 		i++;
 	}
+	return (NULL);
+}
+
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n) //funciion rehecha despues de acabar la primera parte
+{
+	unsigned char *ptdest;
+	const unsigned char *PTSRC;
+
+	if (!dest || !src)
+		return(NULL);
+	ptdest = (unsigned char *)dest;
+	PTSRC = (const unsigned char *)src;
+	while (n > 0 && *PTSRC != (char)c)
+	{
+		*ptdest = *PTSRC;
+		ptdest++;
+		PTSRC++;
+		dest++;
+		n--;
+	}
+	if (*PTSRC == (char)c)
+		return ((unsigned char*)dest);
 	return (NULL);
 }

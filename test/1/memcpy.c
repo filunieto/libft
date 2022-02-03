@@ -13,7 +13,9 @@ int main () {
    const char src[50] = "http://www.tutorialspoint.com";
    char dest[50];
    char dest_ft[50];
-   size_t n = strlen(src)+1;
+   //size_t n = strlen(src)+1;
+   size_t n = 0;
+
    strcpy(dest,"Heloooo!!");
    strcpy(dest_ft,"Heloooo!!");
    printf("Before ft_memcpy dest_ft = %s\n", dest_ft);
@@ -56,7 +58,7 @@ void	*ft_memcpy2(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-void	*ft_memcpy(void *dest, const void *src, size_t n) //esta es la mía sintetizando todo
+void	*ft_memcpy5(void *dest, const void *src, size_t n) //esta es la mía sintetizando todo
 {
 	const unsigned char *PTSRC;
 	unsigned char *ptdest;
@@ -84,6 +86,25 @@ void	*ft_memcpy0(void *dest, const void *src, size_t n)
 	{
 		point1[i] = POINT2[i];
 		i++;
+	}
+	return (dest);
+}
+
+void	*ft_memcpy(void *dest, const void *src, size_t n) //funcion rehecha después de acabar primera parte
+{
+	unsigned char *ptdest;
+	const unsigned char *PTSRC;
+
+	if (!dest || !src)
+		return(NULL);
+	ptdest = (unsigned char *)dest;
+	PTSRC = (const unsigned char *)src;
+	while (n > 0)
+	{
+		*ptdest = *PTSRC;
+		ptdest++;
+		PTSRC++;
+		n--;
 	}
 	return (dest);
 }

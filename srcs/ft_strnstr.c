@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/29 02:12:44 by fnieves           #+#    #+#             */
-/*   Updated: 2022/02/02 21:07:10 by fnieves          ###   ########.fr       */
+/*   Created: 2022/02/01 00:38:48 by fnieves           #+#    #+#             */
+/*   Updated: 2022/02/01 13:30:07 by fnieves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t			i;
-	unsigned char	*point;
+	size_t	i;
 
-	point = (unsigned char *)(s);
-	i = 0;
-	while (i < n)
+	if (!(*little))
+		return ((char *)big);
+	while (*big && len)
 	{
-		point[i] = 0;
-		i++;
+		i = 0;
+		while (big[i] == little[i])
+		{
+			if (!(little[i + 1]))
+				return ((char *)big);
+			i++;
+		}
+		big++;
+		len--;
 	}
+	return (NULL);
 }

@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/29 02:12:44 by fnieves           #+#    #+#             */
-/*   Updated: 2022/02/02 21:07:10 by fnieves          ###   ########.fr       */
+/*   Created: 2022/02/03 14:35:29 by fnieves           #+#    #+#             */
+/*   Updated: 2022/02/03 19:42:03 by fnieves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t			i;
-	unsigned char	*point;
+	char	*dest;
+	size_t	leng_dest;
 
-	point = (unsigned char *)(s);
-	i = 0;
-	while (i < n)
-	{
-		point[i] = 0;
-		i++;
-	}
+	leng_dest = ft_strlen((char *)s1) + ft_strlen((char *)s2);
+	dest = (char *)malloc(sizeof(char) * (leng_dest + 1));
+	ft_strcpy((char *)dest, (char *)s1);
+	ft_strcat((char *)dest, s2);
+	return ((char *)dest);
 }

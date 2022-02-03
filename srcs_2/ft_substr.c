@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/31 14:36:40 by fnieves           #+#    #+#             */
-/*   Updated: 2022/02/02 21:05:40 by fnieves          ###   ########.fr       */
+/*   Created: 2022/02/03 01:58:52 by fnieves           #+#    #+#             */
+/*   Updated: 2022/02/03 13:34:58 by fnieves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	const unsigned char *PTS;
-	PTS = (const unsigned char *)s;
+	unsigned char	*dest;
+	unsigned char	*pts;
+	unsigned int	i;
+	unsigned int	long_dest;
 
-	if (!s)
+	long_dest = len - start;
+	pts = (unsigned char *)s;
+	dest = (unsigned char *)malloc(sizeof(char) * (long_dest + 1));
+	i = 0;
+	if (!dest || !s)
 		return (NULL);
-	while (n--)
+	while (pts[start + i] && long_dest)
 	{
-		if (*PTS++ == (char)c)
-			return((unsigned char *)PTS);
+		dest[i] = pts[start + i];
+		long_dest--;
+		i++;
 	}
+	dest[i] = '\0';
+	if (!pts[start + i] || i < len)
+		return ((char *)dest);
 	return (NULL);
 }
