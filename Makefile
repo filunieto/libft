@@ -27,6 +27,10 @@ srcs/ft_isascii.c \
 srcs/ft_isprint.c \
 srcs/ft_toupper.c \
 srcs/ft_tolower.c \
+srcs_2/ft_substr.c \
+srcs_2/ft_strjoin.c \
+srcs_2/ft_strtrim.c \
+
 
 
 
