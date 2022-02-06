@@ -47,3 +47,5 @@ Duda en mis test: por qué no puedo cargar las funciones de libft?
 
 memset: https://programmerclick.com/article/33201322748/   https://programmerclick.com/article/7222962360/
 
+Error en test war: Parece ser que faltan funciones. En el momento que una falta da error. El problema estará en makefile. el archivo libft.h copiado en el repositorio correcto no funciona
+Leer el archivo de errores.
