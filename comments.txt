@@ -49,3 +49,6 @@ memset: https://programmerclick.com/article/33201322748/   https://programmercli
 
 Error en test war: Parece ser que faltan funciones. En el momento que una falta da error. El problema estará en makefile. el archivo libft.h copiado en el repositorio correcto no funciona
 Leer el archivo de errores.
+
+
+Estructuras: segun Makigas 1x08: utilizamos la flecha cuando pasamos  un puntero a la estructura y no toda la estructura (demasiado pesado)
