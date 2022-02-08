@@ -52,3 +52,6 @@ Leer el archivo de errores.
 
 
 Estructuras: segun Makigas 1x08: utilizamos la flecha cuando pasamos  un puntero a la estructura y no toda la estructura (demasiado pesado)
+
+Duda : void ft_lstadd_front(t_list **lst, t_list *new); --> por qué pasamos la lista como un			 
+array de structuras (**) y no como un puntero *?
