@@ -6,7 +6,7 @@
 /*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 14:32:48 by fnieves           #+#    #+#             */
-/*   Updated: 2022/01/31 02:17:06 by fnieves          ###   ########.fr       */
+/*   Updated: 2022/02/09 01:29:07 by fnieves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 void	*ft_memccpy2(void *dest, const void *src, int c, size_t n)
 {
-	size_t	i;
-	char *Pointer1;
-	const char *POINTER2;
-	
+	size_t		i;
+	char		*pointer1;
+	const char	*pointer2;
+
 	i = 0;
-	Pointer1 = (char *)dest;
-	POINTER2 = (const char * )src;
-	while (i < n && POINTER2[i] != c)
+	pointer1 = (char *)dest;
+	pointer2 = (const char * )src;
+	while (i < n && pointer2[i] != c)
 	{
-		Pointer1[i] = POINTER2[i]; 
+		pointer1[i] = pointer2[i]; 
 		i++;
 		dest++;
 	}
-	if (POINTER2[i] == c)
+	if (pointer2[i] == c)
 	{
-		return (dest); //problamas para devolver punteros. operar con el resto
+		return (dest);
 	}
 	return (NULL);
 }

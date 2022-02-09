@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/31 14:04:11 by fnieves           #+#    #+#             */
-/*   Updated: 2022/02/02 20:54:13 by fnieves          ###   ########.fr       */
+/*   Created: 2022/01/31 23:58:43 by fnieves           #+#    #+#             */
+/*   Updated: 2022/02/09 01:20:10 by fnieves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//función copiada de github. Verificar la comparación de punteros y dif con memcpy
-void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-	size_t				i;
-	unsigned char		*ptr;
-	const unsigned char	*ptr2;
 
-	ptr = (unsigned char*)dst;
-	ptr2 = (unsigned char*)src;
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	unsigned char	*pts1;
+	unsigned char	*pts2;
+	size_t			i;
+
 	i = 0;
-	if (!ptr && !ptr2)
-		return (NULL);
-	if (ptr2 < ptr)
-		while (++i <= len)
-			ptr[len - i] = ptr2[len - i];
-	else
-		while (len-- > 0)
-			*(ptr++) = *(ptr2++);
-	return (dst);
+	pts1 = (unsigned char *)s1;
+	pts2 = (unsigned char *)s2;
+	if (!s1 || !s2)
+		return (0);
+	if (!n)
+		return (0);
+	while (i < n)
+	{
+		if (pts1[i] == pts2[i])
+			i++;
+		else
+			return (pts1[i] - pts1[i]);
+	}
+	return (pts1[i] - pts2[i]);
 }

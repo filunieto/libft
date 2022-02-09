@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/24 13:45:01 by fnieves           #+#    #+#             */
-/*   Updated: 2022/01/24 13:45:31 by fnieves          ###   ########.fr       */
+/*   Created: 2022/02/05 15:42:07 by fnieves           #+#    #+#             */
+/*   Updated: 2022/02/09 01:59:44 by fnieves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
-{
-	int	swap;
+#include "libft.h"
 
-	swap = *a;
-	*a = *b;
-	*b = swap;
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	unsigned int	i;
+
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
+	{
+		(*f)(i, s + i);
+		i++;
+	}
 }

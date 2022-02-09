@@ -129,3 +129,26 @@ int	count_strings(char const *s, char c)
 	printf("parametro countrstr : %i palabras\n", str_count);
 	return (str_count);
 }
+
+
+
+
+char	**ft_split(char const *s, char c) //mi funcion final. No sé si funciona. He copiado una de git y la he puesto en el repo
+{
+	char	**dest;
+	size_t	nb_array;
+
+	dest = (char **)malloc(sizeof(char) * ft_strlen((char *)s) + 1);
+	while (*s)
+	{
+		if (*s == (char)c)
+			dest[nb_array] = s;
+			nb_array++;
+		s++;
+	}
+	if (!(char)c)
+		return (dest(ft_strlen(s) + 1));
+	if (nb_array == 0)
+		return (NULL);
+	return (dest);
+}

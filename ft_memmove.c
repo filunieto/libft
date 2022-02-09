@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/31 14:36:40 by fnieves           #+#    #+#             */
-/*   Updated: 2022/02/02 21:05:40 by fnieves          ###   ########.fr       */
+/*   Created: 2022/01/31 14:04:11 by fnieves           #+#    #+#             */
+/*   Updated: 2022/02/09 01:34:27 by fnieves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	*ft_memchr(const void *s, int c, size_t n)
+//función copiada de github. Verificar la 
+//comparación de punteros y dif con memcpy
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	const unsigned char *PTS;
-	PTS = (const unsigned char *)s;
+	size_t				i;
+	unsigned char		*ptr;
+	const unsigned char	*ptr2;
 
-	if (!s)
+	ptr = (unsigned char *)dst;
+	ptr2 = (unsigned char *)src;
+	i = 0;
+	if (!ptr && !ptr2)
 		return (NULL);
-	while (n--)
-	{
-		if (*PTS++ == (char)c)
-			return((unsigned char *)PTS);
-	}
-	return (NULL);
+	if (ptr2 < ptr)
+		while (++i <= len)
+			ptr[len - i] = ptr2[len - i];
+	else
+		while (len-- > 0)
+			*(ptr++) = *(ptr2++);
+	return (dst);
 }

@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/24 13:44:58 by fnieves           #+#    #+#             */
-/*   Updated: 2022/01/24 13:45:43 by fnieves          ###   ########.fr       */
+/*   Created: 2022/01/28 17:04:27 by fnieves           #+#    #+#             */
+/*   Updated: 2022/02/09 01:31:20 by fnieves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putstr(char *str)
+#include "libft.h"
+//por què elegimos unsigned char y no otro (int, normal char...)
+//aseguramos que el tipo se correcto en esta  atribución
+void	*ft_memset(void *s, int c, size_t n)
 {
-	int	i;
+	unsigned char	*pts;
 
-	i = 0;
-	while (str[i])
+	pts = (unsigned char *)s;
+	while (n--)
 	{
-		ft_putchar(str[i]);
-		i++;
+		*pts++ = (char)c;
 	}
+	return ((unsigned char *)s);
 }
