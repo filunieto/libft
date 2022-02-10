@@ -16,8 +16,10 @@ funciones:
 
 ft_strlcat: la funcion devuelve la longitud de ambas cadenas (dest +src) juntas. Explicacion.
 24: si los t caract. a concatenar == 0; devuelve la long de dest.
-26: si la long de source a concatenar es mayor que los "t size" a concatenar: devuelve destinacion + size (no lleva 0 al final en la long, por lo que no se tiene en cuenta)
-en 26 :el ejercicio original tiene esta sentencia. if (dest_len > size - 1) --Creo que lo correcto sería "dest_src"
+26: si la long de source a concatenar es mayor que los "t size" a concatenar:
+ devuelve destinacion + size (no lleva 0 al final en la long, por lo que no se tiene en cuenta)
+en 26 :el ejercicio original tiene esta sentencia. if (dest_len > size - 1) 
+--Creo que lo correcto sería "dest_src"
 28: la long de source es menor que que lo n "size" a concatenar, se concatena todo y se devuelve la suma de souc y dest - el 0 al final
 
 atencion a esto con los punteros: (no es lo mismo incrementar s(puntero) que i(indice dentro , que comienza por un puntero de un string))
@@ -41,8 +43,6 @@ char	*ft_strchr(const char *s, int c)
 }
 En ft_strdup,  return ((char *)dest) == return (dest); --> esta vez no tenemos el probelma de arriba (39)
 
-Duda: Como podemos pasar un parametro const char* / char * --> por ej a la funcion ft_strlen? sin tener que hacer una nueva funcion
-
 Duda en mis test: por qué no puedo cargar las funciones de libft?
 
 memset: https://programmerclick.com/article/33201322748/   https://programmerclick.com/article/7222962360/
@@ -60,3 +60,21 @@ En void	ft_lstdelone(t_list *del_node, void (*del)(void *)). Por qué del mo se 
 y *f de ft_lstiter sí?
 
 En void	ft_lstiter(t_list *lst, void (*f)(void *)) --> por qué recibimos *lst y no **lst?
+
+strlcpy: qué parametro es el input size?
+La función hace 2 cosas: la copia de los strng y devuelve el parametro de longitud??
+
+strcpy: copiamos caracteres pero cualquier cosa esposible si leng de src >  dest : probelmas memoria
+strncpy: copiamos n bites, pero si en lo n bites a copiar de src , 
+no llega al final de la palabra, no se copiara el \0. Se lía
+strlcpy(char *dst, const char *src, size_t size);
+why if   size == 0 → you return len(src)?? why you do not return 0?
+according to man: The strlcpy() function copies up to size - 1 characters from the NUL-terminated string src to dst, NUL-terminating the result.
+Return Values
+The strlcpy() and strlcat() functions return the total length of the string they tried to create. For strlcpy() that means the length of src. 
+
+I saw these solution in git hub 
+https://github.innominds.com/mpeq/libft/blob/master/ft_strlcpy.c
+https://www.forum.co.za/t/ft-strlcpy-c-and-main-c-example/233
+my questions: why if   size == 0 → you return len(src) an not return 0? and the general sense of this  f**ing function if you always return the len(src)
+----

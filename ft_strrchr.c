@@ -6,11 +6,11 @@
 /*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 11:48:48 by fnieves           #+#    #+#             */
-/*   Updated: 2022/02/01 15:47:19 by fnieves          ###   ########.fr       */
+/*   Updated: 2022/02/10 20:17:51 by fnieves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

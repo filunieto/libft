@@ -6,11 +6,11 @@
 /*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 14:35:29 by fnieves           #+#    #+#             */
-/*   Updated: 2022/02/03 19:42:03 by fnieves          ###   ########.fr       */
+/*   Updated: 2022/02/10 20:18:19 by fnieves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

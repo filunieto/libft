@@ -3,6 +3,7 @@
 
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
+int	ft_strlen(char *str);
 
 int main()
 {
@@ -13,7 +14,7 @@ int main()
     char buffer[size];
 
     strcpy(buffer,first);
-    r = strlcat(buffer,last,size);
+    r = ft_strlcat(buffer,last,size);
 
     puts(buffer);
     printf("Value returned: %d\n",r);
@@ -45,4 +46,17 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size) //mi función. La cam
 	}
 	dst[leng_dst + j] = "\0";
 	return (leng_dst + j -1);
+}
+
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
 }
