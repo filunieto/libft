@@ -1,8 +1,5 @@
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "../libft.h"
 
-int	ft_strlen(char *str);
 
 char	*ft_strrchr(const char *s, int c);
 
@@ -10,6 +7,9 @@ int	main()
 {
 	char a[] = "aiueo";
 	char b[] = "\0";
+	char		c[] = "bonjour";
+	char d = 's';
+
 	printf("flipi   : %s\n", ft_strrchr(a, 'a'));
 	printf("library : %s\n", strrchr(a, 'a'));
 	printf("flipi   : %s\n", ft_strrchr(a, 'i'));
@@ -33,6 +33,8 @@ int	main()
 	printf("library : %s\n", strrchr(b, 'z'));
 	printf("flipi   : %s\n", ft_strrchr(b, '\0'));
 	printf("library : %s\n", strrchr(b, '\0'));
+	printf("flipi   : %s\n", ft_strrchr(c, d));
+	printf("library : %s\n", strrchr(c, d));
 }
 
 // char	*ft_strrchr(const char *s, int c) //Mi version original :probelmas con el stri nulo y , si el parametro es un numero entero. el puntero se iba al carajo
@@ -54,20 +56,9 @@ int	main()
 // 	return(NULL);
 // }
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
 
 
-char	*ft_strrchr(const char *s, int c) //despues de volver atras con más conocimiento me ha slaido esto
+char	*ft_strrchr1(const char *s, int c) //despues de volver atras con más conocimiento me ha slaido esto
 {
 	int leng_s;
 	
@@ -110,3 +101,37 @@ char	*ft_strrchr2(const char *s, int c) //mi funcion original
 	return(NULL);
 }
 
+char	*ft_strrchr3(const char *s, int c) //funcion que NO ha pasado el test war al 100%
+{
+	int	leng_s;
+
+	leng_s = ft_strlen((char *)s);
+	while (*(s + leng_s) != (char)c && leng_s >= 0)
+	{
+		leng_s--;
+	}
+	if (*(s + leng_s) == (char)c)
+		return ((char *)(s + leng_s));
+	return (NULL);
+}
+
+//la fucnion que intento despues de test war. el unico test no pasado el 5. No entiendo porqué
+//Error arriba corregido . La condicone en el while tiene que ser mayor que 0, ya que el puntero vuelve a decrementar y salta
+	// char		c[] = "bonjour";
+	// char d = 's';
+char	*ft_strrchr(const char *s, int c) 
+{
+	size_t	leng_s;
+	char	*pts;
+
+	leng_s = ft_strlen((char *)(s));
+	pts = (char *)(s + leng_s);
+	while ((leng_s > 1) && *pts != (char)c)
+	{
+		pts--;
+		leng_s--;
+	}
+	if (*pts == (char)c)
+		return (pts);
+	return (NULL);
+}

@@ -6,7 +6,7 @@
 /*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 00:38:48 by fnieves           #+#    #+#             */
-/*   Updated: 2022/02/01 13:30:07 by fnieves          ###   ########.fr       */
+/*   Updated: 2022/02/11 21:06:26 by fnieves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (*big && len)
 	{
 		i = 0;
-		while (big[i] == little[i])
+		while (big[i] == little[i] && i < len)
 		{
 			if (!(little[i + 1]))
 				return ((char *)big);

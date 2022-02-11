@@ -48,6 +48,8 @@ int main ()
 // }
 
 //usando punteros abajo da error en un caso. No se puede usar: ft_memcmp("t\200", "t\0", 2)
+// después de corregir strncmp (mismo caso de fallo), la clave es
+// que los punteros tienen que ser unsigned char
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	char	*pts1;

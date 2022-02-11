@@ -36,7 +36,7 @@ int		main(void)
 	// 	write(1, "\n", 1);
 	// 	write(1, dest, 15);
 	// }
-	// else if (atoi(argv[1]) == 4)
+	// else if (atoi(argv[1]) == 4)	
 	// {
 	// 	ft_print_result(ft_strlcpy(dest, "lorem ipsum dolor sit amet", 15));
 	// 	write(1, "\n", 1);

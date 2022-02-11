@@ -65,3 +65,37 @@ char	*ft_strchr2(const char *s, int c) //funcion correcta
 // 		return ((char *)s);
 // 	return (NULL);
 // }
+
+char	*ft_strchr(const char *s, int c) //funcion hecha por mi despues de primera coorreccion de test war
+{
+	unsigned char *pts;
+
+	pts = (unsigned char *)(s);
+	while (*pts)
+	{
+		if (*pts == (unsigned char)c)
+			return (pts);
+		pts++;
+	}
+	if (!(unsigned char)c)
+		return (pts);
+	return (NULL);
+}
+
+
+char	*ft_strchr(const char *s, int c) //mi funcion
+{
+	if (!*s)
+		return (NULL);
+	while (*s)
+	{
+		if (*s == (char)c)
+		{
+			return ((char *)s);
+		}
+		s++;
+	}
+	if (!(char)c)
+		return ((char *)s + 1);
+	return (NULL);
+}
