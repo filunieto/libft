@@ -1,6 +1,7 @@
 #include "../libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy2(char *dst, const char *src, size_t size);
 
 
 int		main(void)
@@ -53,18 +54,37 @@ int		main(void)
 
 
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
-	if (dstsize == 0)
-		return (ft_strlen((char *)src));
 	i = 0;
-	while (src[i] && i < (dstsize - 1))
+	if (!dst || !src)
+		return (0);
+	if (!size)
+		return (ft_strlen((char *)src));
+	while (src[i] && i < size - 1)
 	{
 		dst[i] = src[i];
 		i++;
 	}
 	dst[i] = '\0';
+	return (ft_strlen((char *)src));
+}
+
+
+size_t	ft_strlcpy2(char *dst, const char *src, size_t size) //mi intento con punteros que no ha funcionado
+{
+	if (!dst || !src)
+		return (0);
+	if (!size)
+		return (ft_strlen((char *)src));
+	while (size-- > 1 && *src)
+	{
+		*dst = *src;
+		dst++;
+		src++;
+	}
+	*dst = '\0';
 	return (ft_strlen((char *)src));
 }

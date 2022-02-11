@@ -6,7 +6,7 @@
 /*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 23:58:43 by fnieves           #+#    #+#             */
-/*   Updated: 2022/02/09 01:20:10 by fnieves          ###   ########.fr       */
+/*   Updated: 2022/02/11 14:48:42 by fnieves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,15 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	pts1 = (unsigned char *)s1;
 	pts2 = (unsigned char *)s2;
-	if (!s1 || !s2)
-		return (0);
-	if (!n)
+	if (!s1 || !s2 || !n)
 		return (0);
 	while (i < n)
 	{
-		if (pts1[i] == pts2[i])
-			i++;
-		else
-			return (pts1[i] - pts1[i]);
+		if (pts1[i] != pts2[i])
+		{
+			return (pts1[i] - pts2[i]);
+		}
+		i++;
 	}
-	return (pts1[i] - pts2[i]);
+	return (0);
 }

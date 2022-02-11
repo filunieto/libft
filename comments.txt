@@ -78,3 +78,5 @@ https://github.innominds.com/mpeq/libft/blob/master/ft_strlcpy.c
 https://www.forum.co.za/t/ft-strlcpy-c-and-main-c-example/233
 my questions: why if   size == 0 → you return len(src) an not return 0? and the general sense of this  f**ing function if you always return the len(src)
 ----
+
+ft_memcmp --> en casos extremos no siempre es posible usar punteros o recorridos de array . Hay un test que lo demuestra

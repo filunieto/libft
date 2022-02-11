@@ -56,6 +56,10 @@ BONUS			=	ft_lstadd_back.c \
 					
 BONUS_OBJS		= $(BONUS:.c=.o)
 
+# This order below is not necessary
+%.o: %.c 
+	$(CC) $(CFLAGS) -c $< -o $@
+
 CC				= gcc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I.
