@@ -1,9 +1,8 @@
-#include "../../includes/libft.h"
+#include "../libft.h"
 
 /* Probar esta función quitando los prototipos e incluyendo solo las librerías libft.h*/
 
 char	*ft_strjoin(char const *s1, char const *s2);
-int	ft_strlen(char *str);
 char	*ft_strcat(char *dest, const char *src);
 char	*ft_strcpy(char *dest, char *src);
 char	*ft_strtrim(char const *s1, char const *set);
@@ -115,19 +114,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 // }
 
 
-
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
 
 char	*ft_strcat(char *dest, const char *src)
 {

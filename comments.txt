@@ -11,6 +11,7 @@ funciones:
 - por que se le pasa un argumento int a isascii?
 
 - cuál es el caso de uso del libft.a?
+- como puedo usar libft.h desde la carpeta donde hago mis /test? Como usar las funciones que ya he realizado? --> me da error
 
 - Cuando usamos el size_t?
 
