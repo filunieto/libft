@@ -6,7 +6,7 @@
 /*   By: fnieves- <fnieves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 01:06:31 by fnieves           #+#    #+#             */
-/*   Updated: 2022/04/04 18:18:18 by fnieves-         ###   ########.fr       */
+/*   Updated: 2022/04/05 19:38:48 by fnieves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new;
-	
+
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);

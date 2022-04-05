@@ -6,7 +6,7 @@
 /*   By: fnieves- <fnieves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 01:58:52 by fnieves           #+#    #+#             */
-/*   Updated: 2022/04/01 17:26:24 by fnieves-         ###   ########.fr       */
+/*   Updated: 2022/04/05 19:48:34 by fnieves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		len = len_s;
 	if (start >= len_s)
 		return ((char *)ft_calloc(sizeof(char), 1));
-	i = 0 ;
+	i = 0;
 	dst = (char *)malloc((len + 1) * sizeof(char));
 	if (!dst)
 		return (NULL);
