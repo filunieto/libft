@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
+/*   By: fnieves- <fnieves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:18:11 by fnieves           #+#    #+#             */
-/*   Updated: 2022/02/07 15:52:57 by fnieves          ###   ########.fr       */
+/*   Updated: 2022/04/05 19:39:12 by fnieves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	len;
+	int	i;
 
-	len = 0;
+	i = 0;
+	if (!lst)
+		return (0);
 	while (lst)
 	{
-		len++;
 		lst = lst->next;
+		i++;
 	}
-	return (len);
+	return (i);
 }

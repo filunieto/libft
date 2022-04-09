@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
+/*   By: fnieves- <fnieves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 01:59:03 by fnieves           #+#    #+#             */
-/*   Updated: 2022/02/08 02:49:29 by fnieves          ###   ########.fr       */
+/*   Updated: 2022/04/05 13:33:25 by fnieves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,15 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*tmp;
+	t_list	*temp;
 
 	if (!lst || !del)
 		return ;
-	if (!((*lst)->next))
+	while (*lst)
 	{
-		del((*lst)->content);
-		free((*lst));
-	}
-	while ((*lst)->next)
-	{
-		tmp = (*lst);
-		(*lst) = (*lst)->next;
-		del(tmp->content);
-		free(tmp);
+		temp = (*lst)->next;
+		(del)((*lst)->content);
+		free(*lst);
+		*lst = temp;
 	}
 }

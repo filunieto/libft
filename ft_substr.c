@@ -3,33 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
+/*   By: fnieves- <fnieves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 01:58:52 by fnieves           #+#    #+#             */
-/*   Updated: 2022/03/05 17:51:09 by fnieves          ###   ########.fr       */
+/*   Updated: 2022/04/05 19:48:34 by fnieves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+ ** Creates a substring from s,
+ ** starting at index and max lenght of len.
+ ** If index out of s , returns '\0' (with calloc for avoiding leak mem)
+ ** We calculate the length of the string. If longer than the length 
+ ** to be copied we reduce it to the maximum length of the string s.
+ ** Now, we can copy 'len' bytes from 'start' and nullterminate '*dst'.
+*/
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	unsigned char	*dest;
-	unsigned char	*pts;
-	unsigned int	i;
+	char	*dst;
+	int		i;
+	size_t	len_s;
 
-	pts = (unsigned char *)s;
-	dest = (unsigned char *)malloc(sizeof(char) * (len + 1));
-	i = 0;
-	if (!dest || !s)
+	if (!s)
 		return (NULL);
-	while (pts[start + i] && len - i > 0)
+	len_s = ft_strlen((const char *)s);
+	if (len > len_s)
+		len = len_s;
+	if (start >= len_s)
+		return ((char *)ft_calloc(sizeof(char), 1));
+	i = 0;
+	dst = (char *)malloc((len + 1) * sizeof(char));
+	if (!dst)
+		return (NULL);
+	while (len-- && s[i + (int)start])
 	{
-		dest[i] = pts[start + i];
+		dst[i] = s[i + start];
 		i++;
 	}
-	dest[i] = '\0';
-	if (!pts[start + i] || len == i)
-		return ((char *)dest);
-	return (NULL);
+	dst[i] = '\0';
+	return (dst);
 }

@@ -3,21 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
+/*   By: fnieves- <fnieves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 11:48:48 by fnieves           #+#    #+#             */
-/*   Updated: 2022/02/11 20:10:17 by fnieves          ###   ########.fr       */
+/*   Updated: 2022/04/01 17:26:24 by fnieves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strrchr(const char *s, int c) 
+/* 
+As strchr.
+We calculate the length of the string
+position the pointer at the end of the string
+traverse to the beginning of the string to find the character
+decrementing the pointers as maximum string length
+*/
+char	*ft_strrchr(const char *s, int c)
 {
-	int	leng_s;
+	int		leng_s;
 	char	*pts;
 
-	leng_s = ft_strlen((char *)(s));
+	leng_s = ft_strlen((const char *)(s));
 	pts = (char *)(s + leng_s);
 	while ((leng_s > 0) && *pts != (char)c)
 	{

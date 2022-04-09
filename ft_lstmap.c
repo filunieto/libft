@@ -3,52 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
+/*   By: fnieves- <fnieves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 11:54:32 by fnieves           #+#    #+#             */
-/*   Updated: 2022/02/08 15:19:12 by fnieves          ###   ########.fr       */
+/*   Updated: 2022/04/05 19:38:17 by fnieves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstleng(t_list *lst);
-/*  
-*/
-
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*dest; //es un puntero o un puntero de punteros? * ó **?
-	t_list *tmp;
+	t_list	*new_lst;
+	t_list	*new_node;
+	t_list	*orig;
 
-	tmp = lst;
-	dest = malloc(sizeof(t_list *) * ft_lstleng(lst));
-	if (!lst || !f || dest || del)
-		return (NULL);
-	while (tmp) 
+	new_lst = NULL;
+	orig = lst;
+	while (orig)
 	{
-		dest->content = (*f)(tmp->content);
-		dest = dest->next;
-		tmp = tmp->next;
-		del(lst->content);
-		lst->next = NULL; //no sé si es necesario
-		free(lst);
-		lst = tmp->next; 
+		new_node = ft_lstnew(f(orig->content));
+		if (!new_node)
+		{
+			ft_lstclear(&new_lst, del);
+			return (NULL);
+		}
+		else
+			ft_lstadd_back(&new_lst, new_node);
+		orig = orig->next;
 	}
-	return (dest);
-}
-
-int ft_lstleng(t_list *lst)
-{
-	int	leng_lst;
-
-	leng_lst = 0;
-	if(!lst)
-		return (0);
-	while (lst)
-	{
-		leng_lst++;
-		lst = lst->next;
-	}
-	return (leng_lst);
+	return (new_lst);
 }

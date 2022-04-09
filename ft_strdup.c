@@ -3,22 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
+/*   By: fnieves- <fnieves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 16:30:08 by fnieves           #+#    #+#             */
-/*   Updated: 2022/02/02 21:16:47 by fnieves          ###   ########.fr       */
+/*   Updated: 2022/04/01 17:26:24 by fnieves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+ ** Allocates memory and copy tring s into this memory.
+ ** Returns the pointer with the string(ending in 0).
+ ** Returns null if any memory problem.
+*/
 char	*ft_strdup(const char *s)
 {
 	char	*dest;
 	int		leng_s;
 	int		i;
 
-	leng_s = ft_strlen((char *)s);
+	leng_s = ft_strlen((const char *)s);
 	dest = (char *)malloc(sizeof(char) * (leng_s +1));
 	if (!dest)
 		return (NULL);

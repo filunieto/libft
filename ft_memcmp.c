@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fnieves <fnieves@42heilbronn.de>           +#+  +:+       +#+        */
+/*   By: fnieves- <fnieves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 23:58:43 by fnieves           #+#    #+#             */
-/*   Updated: 2022/02/16 12:10:59 by fnieves          ###   ########.fr       */
+/*   Updated: 2022/04/01 16:45:32 by fnieves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	pts1 = (unsigned char *)s1;
 	pts2 = (unsigned char *)s2;
-	if (!s1 || !s2 || !n)
-		return (0);
-	while (i < n)
+	while (n--)
 	{
 		if (pts1[i] != pts2[i])
 		{
