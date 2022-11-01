@@ -6,7 +6,7 @@
 /*   By: fnieves- <fnieves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 01:07:00 by fnieves           #+#    #+#             */
-/*   Updated: 2022/03/28 21:06:46 by fnieves-         ###   ########.fr       */
+/*   Updated: 2022/11/01 17:06:03 by fnieves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strchr(const char *s, int c)
 {
 	char	*pts;
 
+	if (!s)
+		return	(NULL);
 	pts = (char *)(s);
 	while (*pts)
 	{
