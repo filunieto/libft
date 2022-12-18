@@ -68,3 +68,20 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 
 #endif
+
+// libft tester
+// 15:26
+// #cambiar el nombre del directorio abajo. LibftTester make a
+// PARENT_DIR      = ../libft
+// LIBFT_PATH      = $(PARENT_DIR)
+// TESTS_PATH      = tests/
+// 15:26
+// Unit test
+// 15:26
+// # cambiar Makefile path and make f
+// LIBFTDIR    =   ../libft
+// 15:27
+// war machne: myconfig.sh
+// 15:27
+// #Edit the next line with the path of your libft project.
+// PATH_LIBFT="../libft"
