@@ -69,19 +69,18 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 
 #endif
 
-// libft tester
-// 15:26
+// libft tester . https://github.com/Tripouille/libftTester
 // #cambiar el nombre del directorio abajo. LibftTester make a
 // PARENT_DIR      = ../libft
 // LIBFT_PATH      = $(PARENT_DIR)
 // TESTS_PATH      = tests/
-// 15:26
-// Unit test
-// 15:26
+
+// Unit test  https://github.com/alelievr/libft-unit-test
 // # cambiar Makefile path and make f
 // LIBFTDIR    =   ../libft
 // 15:27
-// war machne: myconfig.sh
-// 15:27
+
+//https://github.com/0x050f/libft-war-machine
+// war machne: myconfig.sh   
 // #Edit the next line with the path of your libft project.
 // PATH_LIBFT="../libft"
